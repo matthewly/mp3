@@ -1,0 +1,13 @@
+<div ng-controller="demoController">
+        {{ myName }}
+            <ul>
+                <li ng-repeat="name in classdata.names">
+                    {{ name }}
+                </li>
+            </ul>
+
+            <input ng-model="inputValue"/>
+            <button class="button" ng-click="change()">Add</button>
+            <a href="#/list/91" class="button">Go to the list</a>
+
+    </div>
