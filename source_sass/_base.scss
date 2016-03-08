@@ -1,8 +1,4 @@
-h1 {
-	text-align: center;
-}
-
-h3 {
+h1, h3, h4 {
 	text-align: center;
 }
 
@@ -99,7 +95,6 @@ nav ul li a:hover {
 	padding-bottom: 1%;
 	width: 250px;
 	height: auto;
-	
 }
 
 .gallery img {
@@ -110,4 +105,38 @@ nav ul li a:hover {
 .movie_title {
 	margin-top: 25px;
 	height: 25px;
+}
+
+.details {
+	width: 50%;
+	height: auto;
+	background-color: $silver;
+	margin: 0 auto;
+	position: relative;
+}
+
+.details ul {
+	list-style-type: none;
+}
+
+.details img {
+	margin: 0 auto;
+	display: block;
+	height: 300px;
+}
+
+.rank {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 2%;
+}
+
+.nav-container .button{
+	margin: 2%;
+}
+
+.right {
+	float: right;
 }

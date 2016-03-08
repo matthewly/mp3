@@ -12,7 +12,17 @@ app.controller('demoController', ['$scope', '$http', function($scope,$http) {
 app.controller('detailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 	$http.get('data/imdb250.json').success(function(data) {
 		$scope.movie = data[$routeParams.rank - 1];
-		console.log($scope.genres);
+		
+		if ($routeParams.rank == 1)
+			$scope.prev = 250;
+		else
+			$scope.prev = parseInt($routeParams.rank) - 1;
+
+		if ($routeParams.rank == 250)
+			$scope.next = 1;
+		else
+			$scope.next = parseInt($routeParams.rank) + 1;
+
 	}).error(function (err) {
 		console.log(err);
 	});
