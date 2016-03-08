@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>MP3 Starter</title>
+    <title>IMDB Top 250 Movie Directory</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/styles.css">
@@ -17,7 +17,16 @@
 </head>
 
 <body ng-app="mp3">
-    
+    <h1>IMDB Top 250 Movie Directory</h1>
+
+    <nav>
+        <ul>
+            <a href="#/list/"><li class="button">Search</li></a>
+            <a href="#/gallery/"><li class="button">Gallery</li></a>
+        </ul>
+    </nav>
+
+    <hr>
 
     <div ng-view> <!-- Depending on route, this div will change -->
 

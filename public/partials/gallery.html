@@ -1,13 +1,28 @@
-<div ng-controller="demoController">
-        {{ myName }}
-            <ul>
-                <li ng-repeat="name in classdata.names">
-                    {{ name }}
-                </li>
-            </ul>
+<div class="row" ng-controller="galleryController">
+    
+    <h3>Genres</h3>
+    <form name="genres">
+        <input type="radio" ng-model="selectedGenre" value="" /> All
+        <input type="radio" ng-model="selectedGenre" value="Action" checked/> Action
+        <input type="radio" ng-model="selectedGenre" value="Adventure"/> Adventure
+        <input type="radio" ng-model="selectedGenre" value="Crime"/> Crime
+        <input type="radio" ng-model="selectedGenre" value="Comedy"/> Comedy
+        <input type="radio" ng-model="selectedGenre" value="Drama"/> Drama
+        <input type="radio" ng-model="selectedGenre" value="Musical"/> Musical
+        <input type="radio" ng-model="selectedGenre" value="Mystery"/> Mystery
+        <input type="radio" ng-model="selectedGenre" value="Romance"/> Romance
+        <input type="radio" ng-model="selectedGenre" value="Sci-Fi"/> Sci-Fi
+        <input type="radio" ng-model="selectedGenre" value="Thriller"/> Thriller
+        <input type="radio" ng-model="selectedGenre" value="Western"> Western
+    </form>
 
-            <input ng-model="inputValue"/>
-            <button class="button" ng-click="change()">Add</button>
-            <a href="#/list/91" class="button">Go to the list</a>
-
+    <div class="gallery">
+        <ul>
+            <li ng-repeat="movie in movies | filter:{genre: selectedGenre}"> 
+                <a ng-href="#/details/{{ movie.rank }}"> <img ng-src="./data/images/{{ movie.imdbID }}.jpg"/> </a>
+                <div class=".movie_title"><span>{{ movie.title }}</span></div>
+            </li>
+        </ul>
     </div>
+
+</div>

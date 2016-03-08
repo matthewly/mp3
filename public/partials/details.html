@@ -1,0 +1,18 @@
+<div ng-controller="detailsController">
+<h3> Title: {{ movie.title }}</h3>
+	<ul>
+		<li>Rank: {{ movie.rank }}</li>
+		<li>Rated: {{ movie.rated }}</li>
+		<li>Released: {{ movie.released }}</li>
+		<li>Runtime: {{ movie.runtime }}</li>
+		<li>Genre(s): <span ng-repeat="genre in movie.genre">{{ genre }} </span></li>
+		<li>Directors(s): <span ng-repeat="director in movie.director">{{ director }} </span></li>
+		<li>Actor(s): <span ng-repeat="actor in movie.actors">{{ actor }} </span></li>
+		<li>Plot: {{ movie.plot }}</li> 
+		<li>Country(s): <span ng-repeat="country in movie.actors">{{ country }} </span></li>
+		<li>Awards: {{ movie.awards }}</li> 
+		<li>Metascore: {{ movie.metascore }}</li> 
+		<li>IMDB Votes: {{ movie.imdbVotes }}</li> 
+		<img ng-src="./data/images/{{ movie.imdbID }}.jpg"
+	</ul>
+</div>

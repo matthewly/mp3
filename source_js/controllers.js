@@ -1,25 +1,39 @@
-/* Sample Controller */
+
 app.controller('demoController', ['$scope', '$http', function($scope,$http) {
-	$scope.myName = "Matthew Ly";
-
-	$scope.classdata = {
-		"title": "CS498RK",
-		"names": ["matthew", "annie", "biplab", "devin"]
-	}
-
-	$scope.change = function() {
-		$scope.classdata.names.push($scope.inputValue);
-		$scope.inputValue = "";
-	}
 
 	$http.get('data/imdb250.json').success(function(data) {
 		$scope.oldStaff = data;
-		console.log(data);
+	
 	}).error(function (err) {
 		console.log(err);
 	});
 }]);
 
-app.controller('demoTwoController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
-	$scope.myRank = $routeParams.rank;
+app.controller('detailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+	$http.get('data/imdb250.json').success(function(data) {
+		$scope.movie = data[$routeParams.rank - 1];
+		console.log($scope.genres);
+	}).error(function (err) {
+		console.log(err);
+	});
+}]);
+
+app.controller('galleryController', ['$scope', '$http', function($scope, $http) {
+	$http.get('data/imdb250.json').success(function(data) {
+		$scope.movies = data;
+		$scope.selectedGenre = ""
+
+	}).error(function (err) {
+		console.log(err);
+	});
+}]);
+
+app.controller('listController', ['$scope', '$http', function($scope, $http) {
+	$http.get('data/imdb250.json').success(function(data) {
+		$scope.movies = data;
+	}).error(function (err) {
+		console.log(err);
+	});
+
+	$scope.predicate = 'rank';
 }]);

@@ -4,11 +4,15 @@ app.config(function ($routeProvider) {
 	$routeProvider
 		.when('/gallery', {
 			templateUrl : 'partials/gallery.html',
-			controller: 'demoController'
+			controller: 'galleryController'
 		})
-		.when('/list/:rank', {
+		.when('/list', {
 			templateUrl : 'partials/list.html',
-			controller : 'demoTwoController'
+			controller : 'listController'
+		})
+		.when('/details/:rank', {
+			templateUrl : 'partials/details.html',
+			controller : 'detailsController'
 		})
 		.otherwise({ // if url doesn't exist, go to /gallery
 			redirectTo: '/gallery'
